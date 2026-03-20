@@ -11,6 +11,10 @@ const location_user = document.querySelector('.location-user');
 const joined = document.querySelector('.joined');
 const link_account = document.querySelector('.link-account');
 const contributionGraph = document.getElementById('contributionGraph');
+const profileCard = document.querySelector('.profile-card');
+let currentUser = null;
+
+profileCard.style.display = "none";
 
 function formatNumber(n) {
   if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
@@ -35,18 +39,21 @@ async function ambilData(inputValue) {
   }
 }
 
-findBtn.addEventListener('click', async () => {
-  let inputValue = input.value.trim();
 
+findBtn.addEventListener('click', async () => {
+  const inputValue = input.value.trim();
+  
   if (!inputValue) {
     alert('Input Tidak Boleh Kosong!');
     return;
   }
-
+  
   findBtn.textContent = 'Mencari...';
-  let user = await ambilData(inputValue);
+  const user = await ambilData(inputValue);
 
   if (user) {
+    profileCard.style.display = "flex";
+    currentUser = user;
     photo.src = user.avatar_url;
     username.textContent = user.login;
     nameTag.textContent = `@${user.name || user.login}`;
@@ -59,32 +66,29 @@ findBtn.addEventListener('click', async () => {
 
     const graphUrl = `https://github-readme-stats.vercel.app/api?username=${user.login}&show_icons=true&count_private=true&include_all_commits=true&bg_color=08091a&title_color=c760b0&text_color=f0e6ff&icon_color=e491c9&hide_border=true`;
     contributionGraph.src = graphUrl;
-    
-
-
+  
   } else {
     alert(`User "${inputValue}" tidak ditemukan.`);
     findBtn.textContent = 'Find Now';
   }
   
-
-
   findBtn.textContent = 'Find Now';
 });
 
 
-link_account.addEventListener('click', async () => {
-  let inputValue = input.value.trim();
-  let user = await ambilData(inputValue);
-
-  if(user){
-    window.open(`${user.html_url}`, "_blank")
+link_account.addEventListener('click', () => {
+  if(currentUser){
+    window.open(`${currentUser.html_url}`, "_blank")
   }
   else{
     alert('tidak dapat membuka link...')
   }
 
-})
+});
 
 
-
+input.addEventListener('keydown', async(enter) =>{
+  if(enter.key === "Enter"){
+    findBtn.click()
+  }
+});
