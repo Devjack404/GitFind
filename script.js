@@ -12,6 +12,7 @@ const joined = document.querySelector('.joined');
 const link_account = document.querySelector('.link-account');
 const contributionGraph = document.getElementById('contributionGraph');
 const profileCard = document.querySelector('.profile-card');
+const profilePage = document.querySelector('.profile-page');
 let currentUser = null;
 
 profileCard.style.display = "none";
@@ -51,6 +52,7 @@ findBtn.addEventListener('click', async () => {
   findBtn.textContent = 'Mencari...';
   const user = await ambilData(inputValue);
 
+  if()
   if (user) {
     profileCard.style.display = "flex";
     currentUser = user;
@@ -87,8 +89,20 @@ link_account.addEventListener('click', () => {
 });
 
 
-input.addEventListener('keydown', async(enter) =>{
+input.addEventListener('keydown', (enter) =>{
   if(enter.key === "Enter"){
     findBtn.click()
   }
 });
+
+
+
+
+const profile_change = async (profilePage) => {
+  console.log(profilePage)  
+  // return console.log("tes")
+}
+
+const a = 1;
+console.log(a)
+console.log(profile_change())
