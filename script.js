@@ -52,7 +52,6 @@ findBtn.addEventListener('click', async () => {
   findBtn.textContent = 'Mencari...';
   const user = await ambilData(inputValue);
 
-  if()
   if (user) {
     profileCard.style.display = "flex";
     currentUser = user;
@@ -85,7 +84,6 @@ link_account.addEventListener('click', () => {
   else{
     alert('tidak dapat membuka link...')
   }
-
 });
 
 
@@ -94,15 +92,3 @@ input.addEventListener('keydown', (enter) =>{
     findBtn.click()
   }
 });
-
-
-
-
-const profile_change = async (profilePage) => {
-  console.log(profilePage)  
-  // return console.log("tes")
-}
-
-const a = 1;
-console.log(a)
-console.log(profile_change())
