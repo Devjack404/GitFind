@@ -5,7 +5,7 @@ A clean and simple web app to search any GitHub user and display their profile i
 🌐 **Live Demo:** [gitfind-liard.vercel.app](https://gitfind-liard.vercel.app/)
 
 ---
-## 📸 Preview
+## Image Preview 
 
 ![Teks Alternatif](GitFind-Image.png)
 
@@ -34,7 +34,7 @@ A clean and simple web app to search any GitHub user and display their profile i
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 GitFind/
@@ -65,7 +65,7 @@ GitFind/
 
 ---
 
-## 📡 API Used
+## API Used
 
 This project uses the **GitHub REST API** to fetch public user data.
 
