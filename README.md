@@ -76,7 +76,14 @@ GET https://api.github.com/users/{username}
 No API key required for basic usage. Public data only.
 
 ---
+## Report Bugs
+
+if you found some bugs you can report in here [Issues](https://github.com/Devjack404/GitFind/issues/new)
+
+---
 
 ## 📄 License
+
+
 
 This project is open source and free to use.
