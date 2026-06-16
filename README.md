@@ -82,7 +82,7 @@ if you found some bugs you can report in here [Issues](https://github.com/Devjac
 
 ---
 
-## 📄 License
+## License
 
 
 
