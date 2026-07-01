@@ -17,7 +17,6 @@ A clean and simple web app to search any GitHub user and display their profile i
 - Display avatar, bio, and profile link
 - Show followers, following, and public repositories count
 - Display join date and location
-- Contribution graph from the last year
 - Fast and lightweight — no frameworks, no dependencies
 
 ---
